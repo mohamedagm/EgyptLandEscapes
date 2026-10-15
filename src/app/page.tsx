@@ -1,65 +1,124 @@
-import Image from "next/image";
+import { Categories } from "@/components/home/Categories";
+import { CategoryTourRails } from "@/components/home/CategoryTourRails";
+import { ComfortLevels } from "@/components/home/ComfortLevels";
+import { DestinationsMap } from "@/components/destinations/DestinationsMap";
+import { DestinationsStrip } from "@/components/home/DestinationsStrip";
+import { EditorialIntro } from "@/components/home/EditorialIntro";
+import { FeaturedTours } from "@/components/home/FeaturedTours";
+import { FinalCta } from "@/components/home/FinalCta";
+import { Hero } from "@/components/home/Hero";
+import { HomeFaq } from "@/components/home/HomeFaq";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { InclusionsPromise } from "@/components/home/InclusionsPromise";
+import { JournalStrip } from "@/components/home/JournalStrip";
+import { NileQuote } from "@/components/home/NileQuote";
+import { SignatureMoments } from "@/components/home/SignatureMoments";
+import { TourFinder } from "@/components/home/TourFinder";
+import { SeasonDial } from "@/components/effects/SeasonDial";
+import { CursorSpotlight } from "@/components/effects/CursorSpotlight";
+import { TravelerStories } from "@/components/home/TravelerStories";
+import { TravelerTypes } from "@/components/home/TravelerTypes";
+import { TripDurations } from "@/components/home/TripDurations";
+import { TripMoodQuiz } from "@/components/home/TripMoodQuiz";
+import { TripBuilderTeaser } from "@/components/home/TripBuilderTeaser";
+import { TrustBand } from "@/components/home/TrustBand";
+import { TrustMarquee } from "@/components/home/TrustMarquee";
+import { WhyUs } from "@/components/home/WhyUs";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <CursorSpotlight />
+      <Hero />
+      <TrustMarquee />
+      <Reveal>
+        <TourFinder />
+      </Reveal>
+      <Reveal>
+        <section className="section-pad py-10 md:py-16">
+          <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <SectionHeading
+                eyebrow="Not sure where to start?"
+                title="Read your trip mood in four taps"
+                description="Temples, Nile nights, desert sky, beach recovery, family pace, or quiet luxury — then jump to matching routes."
+              />
+              <div className="mt-6">
+                <ButtonLink href="/trip-mood" variant="ghost">
+                  Open full-screen quiz
+                </ButtonLink>
+              </div>
+            </div>
+            <TripMoodQuiz compact />
+          </div>
+        </section>
+      </Reveal>
+      <Reveal>
+        <TripBuilderTeaser />
+      </Reveal>
+      <Reveal>
+        <EditorialIntro />
+      </Reveal>
+      <Reveal>
+        <WhyUs />
+      </Reveal>
+      <Reveal>
+        <TrustBand />
+      </Reveal>
+      <Reveal>
+        <SignatureMoments />
+      </Reveal>
+      <Reveal>
+        <FeaturedTours />
+      </Reveal>
+      <Reveal>
+        <CategoryTourRails />
+      </Reveal>
+      <Reveal>
+        <Categories />
+      </Reveal>
+      <Reveal>
+        <TravelerTypes />
+      </Reveal>
+      <Reveal>
+        <TripDurations />
+      </Reveal>
+      <Reveal>
+        <ComfortLevels />
+      </Reveal>
+      <Reveal>
+        <DestinationsMap />
+      </Reveal>
+      <Reveal>
+        <DestinationsStrip />
+      </Reveal>
+      <Reveal>
+        <InclusionsPromise />
+      </Reveal>
+      <Reveal>
+        <SeasonDial />
+      </Reveal>
+      <Reveal>
+        <TravelerStories />
+      </Reveal>
+      <Reveal>
+        <JournalStrip />
+      </Reveal>
+      <Reveal>
+        <HowItWorks />
+      </Reveal>
+      <Reveal>
+        <HomeFaq />
+      </Reveal>
+      <Reveal>
+        <NileQuote />
+      </Reveal>
+      <Reveal>
+        <FinalCta />
+      </Reveal>
+    </>
   );
 }

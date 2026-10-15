@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Egypt Land Escapes
 
-## Getting Started
+Private Egypt tourism website MVP built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Home with Tour Finder, trust band, journal, and rich planning sections
+- Tours catalog with filters: category, destination, duration, price
+- Tour detail with gallery + lightbox
+- Destinations, Journal, About, Contact
+- Sticky WhatsApp button site-wide
+- Contact form via **Resend** (optional env) + WhatsApp CTAs
 
-## Learn More
+## Real email (contact form)
 
-To learn more about Next.js, take a look at the following resources:
+1. Copy `.env.example` to `.env.local`
+2. Create an API key at [resend.com](https://resend.com)
+3. Fill:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+RESEND_API_KEY=re_xxx
+CONTACT_TO_EMAIL=your@email.com
+CONTACT_FROM_EMAIL=Egypt Land Escapes <onboarding@resend.dev>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without the key, enquiries still succeed in demo mode and log to the server console.
 
-## Deploy on Vercel
+## Edit content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| What | Where |
+|------|--------|
+| Contact / trust / WhatsApp | `src/data/site.ts` |
+| Tours | `src/data/tours.ts` |
+| Destinations | `src/data/destinations.ts` |
+| Journal posts | `src/data/journal.ts` |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Languages
+
+English only for now.
+
+## Tour detail upgrades
+
+- Visual day-by-day timeline
+- Per-tour FAQ accordion
+- Related tours
+- Gallery + lightbox
+
+## Deploy
+
+Push to GitHub and deploy on [Vercel](https://vercel.com). Add the same env vars in the Vercel project settings.
