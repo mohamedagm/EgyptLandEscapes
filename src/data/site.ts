@@ -5,9 +5,9 @@ export const siteConfig = {
     "Egypt Land Escapes designs private Egypt tours, Nile cruises, and desert escapes with local specialists — from the Pyramids to the Red Sea.",
   url: "https://egyptlandescapes.com",
   contact: {
-    phoneDisplay: "+20 100 000 0000",
-    phoneTel: "+201000000000",
-    whatsapp: "201000000000",
+    phoneDisplay: "+20 11 2424 7114",
+    phoneTel: "+201124247114",
+    whatsapp: "201124247114",
     email: "hello@egyptlandescapes.com",
     address: "12 Nile Corniche, Giza, Egypt",
     hours: "Daily · 8:00 AM – 10:00 PM (Cairo time)",
